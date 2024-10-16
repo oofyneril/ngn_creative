@@ -1,0 +1,849 @@
+/* Title Styling */
+.game-title {
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border: 4px solid #4CAF50;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+}
+
+
+
+/* Ensure the entire viewport is used */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Menu Background */
+#mainMenu {
+    background-image: url('images/main_menu_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+
+.menu-button {
+    font-size: 24px;
+    padding: 15px 40px;
+    margin: 20px;
+    background-color: #af844c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-button:hover {
+    background-color: #a07445;
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Button Animations */
+.menu-button:active {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+/* Play Section Background */
+#gameContent {
+    background-image: url('images/play_background.jpg');
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Disable scrolling */
+}
+
+/* Position buttons at the bottom corners */
+#resetGameButton {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Return Button Improvements */
+.return-button {
+    position: fixed;
+    height: 110px;
+    width: 110px;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: rgba(168, 168, 168, 1);
+    background-image: url('images/return-icon.png'); /* Add mini image */
+    background-size: 100%; 
+    background-position: center; /* Position mini image on left */
+    background-repeat: no-repeat; /* Make sure the image doesn't repeat */
+    border: none;    
+    border-radius: 50%;            /* No border */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;         /* Center content inside the circle */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.return-button:hover {
+    background-color: rgba(41, 128, 185, 1); /* Darker translucent blue on hover */
+}
+
+/* Click Effect */
+.return-button:active {
+    transform: scale(0.98); /* Slight scale effect when clicked */
+}
+
+
+/* XP Bar Styling */
+#xp-container {
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+meter::-webkit-meter-bar {
+    background: #ccc;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+}
+
+
+.crystals-counter {
+    font-size: 18px;  /* Increase font size */
+    font-weight: bold;  /* Make it bold */
+    color: white;  /* White text */
+    background-color: #3e3e3e;  /* Green background */
+    border: 2px solid #333;  /* Dark border */
+    border-radius: 8px;  /* Rounded corners */
+    padding: 5px 30px;  /* Padding inside the box */
+    text-align: center;  /* Center text */
+    display: inline-block;
+}
+
+
+
+/* Gacha Section Background =======================================================================================================*/
+#gachaContent {
+    background-image: url('images/gacha_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Disable scrolling */
+}
+
+
+/* Gacha Button Animation */
+#gacha-Button {
+    width: 150px;
+    height: 150px;
+    background-color: #4CAF50; /* Example background */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 150px; /* To vertically center the text */
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    position:fixed;
+    top: 14%;
+    right: 45%;
+    opacity: 0;
+}
+
+#gacha-Button:hover {
+    background-color: #45a049; /* Change color on hover */
+}
+
+#gacha-Button.spin {
+    animation: spin 0.5s linear infinite; /* Spinning effect */
+}
+
+#gacha-Button.glow {
+    box-shadow: 0 0 15px 5px yellow; /* Glowing effect */
+}
+
+/* Keyframes for spinning */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/* Gacha Animation for Summon 
+
+*/
+.gacha-animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.gacha-result {
+    animation: reveal 1s ease forwards;
+    margin-top: 20px;
+    font-size: 30px;
+    color: #FFD700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.gacha-ball {
+    width: 180px;
+    height: 180px;
+    background-image: url('images/gacha_ball.png'); /* Gacha ball image */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    animation: gachaSpin 0.1s linear infinite; /* Continuous spin animation */
+}
+
+@keyframes gachaSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Glow Animation */
+@keyframes gachaGlow {
+    0% {
+        box-shadow: 0 0 10px white;
+    }
+    50% {
+        box-shadow: 0 0 30px #ffcc00, 0 0 50px white;
+    }
+    100% {
+        box-shadow: 0 0 10px white;
+    }
+}
+
+.gacha-ball.glow {
+    animation: gachaGlow 1.5s ease-in-out infinite alternate;
+}
+
+
+/* Keyframes for spinning */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Reveal Animation */
+@keyframes reveal {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for image reveal */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+
+
+
+
+/* Inventory Section Background =====================================================================================================*/
+#inventoryModal {
+    background-image: url('images/inventory_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensure it covers the full viewport height */
+    width: 100vw;  /* Ensure it covers the full viewport width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: fixed;
+    overflow: auto; /* Prevents scrolling of the entire modal */
+}
+
+
+/* Inventory Layout using Flexbox */
+.inventory-grid {
+    display: flex;
+    flex-wrap: wrap;         /* Allow items to wrap into multiple lines */
+    justify-content: flex-start; /* Align items starting from the left */
+    align-items: flex-start; /* Align items starting from the top */
+    gap: 10px;               /* Spacing between items */
+    padding: 20px;           /* Add padding around the content */
+    margin-top: 10px;        /* Adjust to control how far down the characters start */
+    max-width: 90%;          /* Limit width of the content to center it */
+    max-height: 70vh;        /* Set max height for scrolling to kick in */
+    max-width: 100%;          /* Limit width of the content to center it */
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 80vh;        /* Set a maximum height for the grid */
+    overflow-y: auto;        /* Enable vertical scrolling */
+}
+
+/* Style each character's card */
+.inventory-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content vertically */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px; /* Adjust the width as needed */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better look */
+}
+
+
+/* Ultra-Rare */
+.inventory-item.ultra-rare {
+    border: 3px solid red;
+    background-color: rgba(255, 0, 0, 0.5); /* Light red background for Ultra-Rare */
+    border-radius: 10px;
+}
+
+/* Super-Rare */
+.inventory-item.super-rare {
+    border: 3px solid purple;
+    background-color: rgba(128, 0, 128, 0.5); /* Light purple background for Super-Rare */
+    border-radius: 10px;
+}
+
+/* Rare */
+.inventory-item.rare {
+    border: 3px solid blue;
+    background-color: rgba(0, 0, 255, 0.5); /* Light blue background for Rare */
+    border-radius: 10px;
+}
+
+/* Common */
+.inventory-item.common {
+    border: 3px solid green;
+    background-color: rgba(0, 128, 0, 0.5); /* Light green background for Common */
+    border-radius: 10px;
+}
+
+.inv_return-button {
+    position: auto;
+    bottom: 10px;
+    right: 10px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid white;  /* White border */
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.inv_return-button:hover {
+    background-color: #8a8a8a;
+}
+
+/*view details ============================================================================================================*/
+
+
+
+
+/* Main container for character details */
+.character-details-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Left section for image and description */
+.character-left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.character-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.character-description {
+    font-size: 16px;
+    margin-top: 10px;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Right section for ability */
+.character-right-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 20px;
+}
+
+.character-ability {
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.character-ability-description {
+    font-size: 16px;
+    margin-bottom: 0;
+    text-align: right;
+    max-width: 300px;
+}
+
+/* Optional for additional button or other elements */
+.character-details-container button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.character-details-container button:hover {
+    background-color: #45a049;
+}
+
+
+/* Rarity-based background images for character details */
+.character-details.common {
+    background-image: url('images/commonBG.png'); /* Background for Common */
+    background-size: cover;
+    background-position: center;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.character-details.rare {
+    background-image: url('images/rareBG.png'); /* Background for Rare */
+    background-size: cover;
+    background-position: center;
+    border: 3px solid blue;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.character-details.super-rare {
+    background-image: url('images/superrareBG.png'); /* Background for Super-Rare */
+    background-size: cover;
+    background-position: center;
+    border: 3px solid purple;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.character-details.ultra-rare {
+    background-image: url('images/ultrarareBG.png'); /* Background for Ultra-Rare */
+    background-size: cover;
+    background-position: center;
+    border: 3px solid red;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+
+/* Button Styling */
+.view-details-button, .select-character-button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.view-details-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-details-button:hover {
+    background-color: #45a049;
+}
+
+/* Selected Characters Styling */
+#selectedCharactersContainer {
+    position: fixed;
+    left: 100px;
+    bottom: 20%;
+    display: flex;               /* Enable Flexbox */
+    justify-content: space-around; /* Equal spacing between characters */
+    align-items: center;         /* Vertically center the characters */
+    width: 100%;                 /* Ensure full width */
+    margin-top: 5px;            /* Add some margin on top */
+}
+
+#selectedCharactersContainer img {
+    width: 10%;
+    height: 10%;
+    border-radius: 3px;
+    border: 2px solid #000000;
+    margin: 0 5px;              /* Margin around the images for spacing */
+}
+
+#selectedCharactersContainer p {
+    color: white;
+    width: 10%;
+    height: 10%;
+    font-weight: bold;
+    margin-top: 3px;
+    text-align: center;          /* Center text below images */
+}
+
+#activeCharactersContainer {
+    position: auto; /* You had "auto" earlier, fixed would be better for sticking it to a spot */
+    bottom: 20px;
+    left: 30px;
+    font-size: medium;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 10px;
+    width: 30%; /* You can change this value as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style for the Adventure Team heading */
+#activeCharactersContainer h4 {
+    color: white; /* Text color */
+    margin: 0 0 10px 0; /* Add some margin for spacing */
+}
+
+/* Style for the characters inside the container */
+#activeCharacters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+/* Character image animation */
+.character-attack {
+    animation: attack 0.5s ease-in-out;  /* 0.5s attack animation */
+}
+
+/* Animation for ability activation */
+.ability-animation {
+    animation: glow 1s ease-in-out;  /* 1 second glow animation */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px yellow;
+    }
+    50% {
+        box-shadow: 0 0 30px yellow;
+    }
+    100% {
+        box-shadow: 0 0 10px yellow;
+    }
+}
+
+/* Attack Button Improvements */
+.attack-button {
+    font-size: 20px;
+    padding: 15px 30px;
+    background-color: #e74c3c; /* Red */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.attack-button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Ensure buttons stay responsive */
+.attack-button:active {
+    transform: scale(0.98);
+}
+
+
+
+/* Ability Button Improvements */
+.ability-button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #8e44ad; /* Purple */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 220px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ability-button:hover {
+    background-color: #732d91; /* Darker purple on hover */
+}
+
+/* Ensure buttons stay responsive */
+.ability-button:active {
+    transform: scale(0.98);
+}
+
+/* Style for the disabled ability button */
+.ability-button.disabled {
+    background-color: grey; /* Grey when disabled */
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+#difficultyLevel {
+    font-weight: bold;
+    font-size: medium;
+    color: orange;
+    margin-top: 10px;
+    border: 2px solid orange;
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgba(255, 165, 0, 0.9); /* Optional background color for better visibility */
+}
+
+
+/* Ability Animation (flashing) */
+@keyframes abilityFlash {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+
+#bossHealthBar {
+    transition: width 0.1s ease-in-out;
+}
+
+.character-attack {
+    animation: attackAnimation 0.5s ease-in-out;
+}
+
+
+/* Achievements Modal Styles */
+.modal {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #000000;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Achievement Item Styles */
+.achievement-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.achievement-item h4 {
+    margin-bottom: 5px;
+}
+
+.achievement-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+/* Timer Display Styling */
+.timer-display {
+    position: fixed;
+    top: 20px;
+    right: 440px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Background with slight transparency */
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #fff; /* Add white border */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Game Over Message Styling */
+#gameOverMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    border: none; /* Make sure no borders are added */
+    outline: none; /* Ensure no outlines are shown */
+}
+
+/* Close Button (Replay Button) Styling */
+.replay-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.replay-button:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Archives ====================================================================================================================== */
+#archiveModal {
+    background-image: url('images/library_background.jpg'); /* Path to your image */
+    background-position: center; /* Center the image */
+    height: 100%; /* Full viewport height */
+    width: 100%; /* Full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: fixed;
+    padding: 20px;
+}
+
+/* Archive Button Improvements */
+.archive-button {
+    position: fixed;
+    top: 47%;
+    right: 20%;
+    font-size: 26px;
+    width: 170px;
+    height: 170px;
+    background-color: #cd3ce7; /* Red */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.archive-button:hover {
+    background-color: #872089; /* Darker red on hover */
+}
+
+.archive-button:active {
+    transform: scale(0.98); /* Slight scale effect when clicked */
+}
+
+
+
+
+
+#archivesContent {
+    display: flex;
+    flex-wrap: wrap;         /* Allow items to wrap into multiple lines */
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start; /* Align items starting from the top */
+    gap: 20px;               /* Spacing between items */
+    padding: 20px;           /* Add padding around the content */
+    margin-top: 50px;        /* Adjust to control how far down the characters start */
+}
+
+/* Story Mode Button Styling =======================================================================================================*/ 
+/* Story Mode Button Improvements */
+.story-button {
+    position: fixed;
+    font-size: 26px;
+    width: 170px;
+    height: 170px;
+    top: 45%;
+    left: 20%;
+    background-color: #2980b9; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.story-button:hover {
+    background-color: #2471a3; /* Darker blue on hover */
+}
+
+.story-button:active {
+    transform: scale(0.98); /* Slightly shrink the button when clicked */
+}

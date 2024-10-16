@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Mode - Clash of Stories</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <!-- Story Mode Section -->
+    <div id="storyMode" class="story-mode" style="display: none;">
+        <div id="storyContainer" class="story-container">
+            <!-- Character Image -->
+            <img id="storyCharacter" src="" alt="Character Image" class="character-image" />
+
+            <!-- Dialog Box -->
+            <div class="dialogue-box">
+                <p id="dialogText">[Dialog will appear here]</p>
+            </div>            
+
+            <!-- Next Button -->
+            <button id="nextButton" class="next-button" onclick="nextDialog()">Next</button>
+
+            <!-- Reset Story Button -->
+            <button class="resetStoryButton" onclick="resetStoryMode()">Restart Story</button>
+
+            <!-- Return to Main Menu Button -->
+            <button class="return-button" onclick="closeStoryMode()">Return to Main Menu</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for handling the story -->
+    <script src="story.js"></script> <!-- Link to your story logic -->
+
+</body>
+</html>
+

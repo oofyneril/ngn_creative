@@ -1,0 +1,207 @@
+{
+    "dialogs": [
+        {
+            "text": "I don't know exactly what a prayer is.",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "I do know how to pay attention, how to fall down into the grass, how to kneel down in the grass.",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "How to be idle and blessed, how to stroll through the fields, which is what I have been doing all day.",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "Tell me, what else should I have done?",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "Doesn’t everything die at last, and too soon?",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "Tell me, what is it you plan to do with your one wild and precious life?",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "The grasshopper jumps onto your shoulder...",
+            "character": "Author",
+            "characterImage": "images/grasshopper.png"
+        },
+        {
+            "text": "Why don’t you go out and discover it?",
+            "character": "Grasshopper",
+            "characterImage": "images/grasshopper.png"
+        },
+        {
+            "text": "**SHOCKED**",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "I see that you are having trouble with finding a purpose in life.",
+            "character": "Grasshopper",
+            "characterImage": "images/grasshopper.png"
+        },
+        {
+            "text": "I may not be the one you were praying to, but I am, what people would call me, the AUTHOR.",
+            "character": "Grasshopper",
+            "characterImage": "images/grasshopper.png"
+        },
+        {
+            "text": "Do not be alarmed as I am speaking to you in a form of a grasshopper.",
+            "character": "Grasshopper",
+            "characterImage": "images/grasshopper.png"
+        },
+        {
+            "text": "And I am going to send you on a journey of discovery, learn well my creation!",
+            "character": "Grasshopper",
+            "characterImage": "images/grasshopper.png"
+        },
+        {
+            "text": "Discover your own meaning through the lens of other's experiences.",
+            "character": "Grasshopper",
+            "characterImage": "images/grasshopper.png"
+        },
+        {
+            "text": "Mary woke up in a dense, foggy medieval forest, she wonders around while reflecting on her questions about life.",
+            "character": "Author",
+            "characterImage": ""
+        },
+        {
+            "text": "Who—what are you?",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "Do not be afraid.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "You’re... you’re a man?",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "I was. A knight, once. My name is Bisclavret.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "I was a knight, loyal to my king and devoted to my country. But I harbored a secret... I was cursed to become a wolf by night.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "That’s awful. Why would she do such a thing?",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "She desired another man. For a time, I lived as this beast, lost in the wild, until the king discovered me.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "Loyalty demands much. But without it, we are nothing.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "But is it worth it? If loyalty only leads to betrayal?",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "There is no easy answer. We must choose what we value most, even when it hurts.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "What is this place? It feels... different.",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "We’re entering the realm of the fae. Be cautious.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "Ah, travelers. What brings a knight-wolf and a mortal into my realm?",
+            "character": "Titania",
+            "characterImage": "images/titania.png"
+        },
+        {
+            "text": "I... I didn’t know this place existed.",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "You remind me of myself when I was young, full of wonder and longing.",
+            "character": "Titania",
+            "characterImage": "images/titania.png"
+        },
+        {
+            "text": "I... I’m looking for answers. About life, about purpose.",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "Stay a while, and perhaps you’ll find what you seek.",
+            "character": "Titania",
+            "characterImage": "images/titania.png"
+        },
+        {
+            "text": "Well, well, what do we have here?",
+            "character": "Puck",
+            "characterImage": "images/puck.png"
+        },
+        {
+            "text": "My lord, I have news! Titania has made a new friend—a mortal, no less!",
+            "character": "Puck",
+            "characterImage": "images/puck.png"
+        },
+        {
+            "text": "Titania has gone too far this time.",
+            "character": "Oberon",
+            "characterImage": "images/oberon.png"
+        },
+        {
+            "text": "Go now, and return with the wings of the Dream Butterfly.",
+            "character": "Oberon",
+            "characterImage": "images/oberon.png"
+        },
+        {
+            "text": "There’s more to life than simply finding answers, dear Mary. Sometimes, the magic lies in the questions we never stop asking.",
+            "character": "Titania",
+            "characterImage": "images/titania.png"
+        },
+        {
+            "text": "I’ve never thought of it that way.",
+            "character": "Mary",
+            "characterImage": "images/mary.png"
+        },
+        {
+            "text": "We should move on, Mary. The fae realm is full of tricks.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "Stay as long as you like, child. There is much you can learn here. But be wary of those who wish to twist dreams into chains.",
+            "character": "Titania",
+            "characterImage": "images/titania.png"
+        }
+    ]
+}
+
+  
+  

@@ -1,0 +1,232 @@
+/* Story Mode Section Styling */
+.story-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1000;
+}
+
+.story-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url('images/story_background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.story-image {
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Dialogue Box Styling */
+.dialogue-box {
+    position: absolute;
+    top: auto;
+    bottom: 10%;
+    width: 80%;  /* Set a reasonable width for the dialogue box */
+    margin: 20px auto;  /* Center the box horizontally and add margin above/below */
+    padding: 20px;  /* Add padding inside the box */
+    background-color: rgba(0, 0, 0, 0.7);  /* Background color with transparency */
+    border: 2px solid white;  /* White border */
+    border-radius: 10px;  /* Rounded corners */
+    color: white;  /* Text color */
+    font-size: 24px;  /* Adjust text size */
+    font-family: Arial, sans-serif;  /* Font family */
+    text-align: left;  /* Align text to the left */
+}
+
+
+.dialogue-text {
+    color: white;
+    font-size: 48px;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.dialog-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Style for the active (current) dialog */
+.active-dialog .dialog-text {
+    color: white;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2); /* Optional background highlight */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Style for the inactive (previous) dialog */
+.inactive-dialog .dialog-text {
+    color: rgba(255, 255, 255, 0.5); /* Dim the color */
+}
+
+
+
+
+
+
+/* Character Image Styling */
+.character-image {
+    width: 180px;
+    height: auto;
+    border-radius: 20px;
+    position: fixed;
+    top: 370px;
+    transform: translateY(-50%);  /* Vertically center */
+    opacity: 0;  /* Start hidden */
+    transition: all 0.5s ease-out;
+}
+
+.character-left {
+    left: -200px;  /* Off-screen to the left */
+    opacity: 1;
+}
+
+.character-right {
+    right: -200px;  /* Off-screen to the right */
+    opacity: 1;
+}
+
+.character-visible {
+    left: 10%;  /* Transition to visible on the left */
+    right: 10%;  /* Transition to visible on the right */
+    opacity: 1;
+}
+
+.character-invisible {
+    left: 10%;  /* Transition to visible on the left */
+    right: 10%;  /* Transition to visible on the right */
+    opacity: 0;
+}
+
+.character-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: #818181;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    text-align: center;
+    
+    width: 180px;
+    height: auto;
+    position: fixed;
+    top: 240px;
+    left: 150px;
+
+}
+
+
+/* .character-group {
+    display: flex;
+    flex-direction: column;  /* Stack items vertically 
+    align-items: center;     /* Center the image and button
+    justify-content: center;
+    margin: 20px;            /* Add space between characters
+} */
+
+/* Keyframes for left-side entry */
+@keyframes enterFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);    /* End at the normal position */
+        opacity: 1;
+    }
+}
+
+/* Keyframes for right-side entry */
+@keyframes enterFromRight {
+    0% {
+        transform: translateX(100%);  /* Start off-screen to the right */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);    /* End at the normal position */
+        opacity: 1;
+    }
+}
+
+
+/* Next Button Styling */
+.next-button {
+    position: fixed;
+    height: 17%;
+    width: 84%;
+    top: auto;
+    bottom: 10%;
+    margin: 20px auto;  /* Center the box horizontally and add margin above/below */
+    padding: 20px;  /* Add padding inside the box */
+    background-color: rgba(0, 0, 0, 0.7);  /* Background color with transparency */
+    border: 2px solid white;  /* White border */
+    border-radius: 10px;  /* Rounded corners */
+    color: white;  /* Text color */
+    font-size: 24px;  /* Adjust text size */
+    font-family: Arial, sans-serif;  /* Font family */
+    text-align: left;  /* Align text to the left */
+    opacity: 0;
+}
+
+.next-button:hover {
+    background-color: #45a049;
+}
+
+/* Next Button Styling */
+.resetStory-button {
+    position: fixed;
+    margin-top: 20px;
+    top: auto;
+    bottom: 1%;
+    left: 1%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid white;  /* White border */
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.resetStory-button:hover {
+    background-color: #818181;
+}
+
+/* Auto Proceed Button Styling */
+#toggleAutoButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;           /* Font size */
+    padding: 10px 20px;        /* Padding for a comfortable button size */
+    background-color: #2196F3; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 10px;       /* Rounded corners */
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    z-index: 1000; /* Ensure button stays on top */
+}
+
+#toggleAutoButton:hover {
+    background-color: #1e86db; /* Darker blue on hover */
+}
+
+#toggleAutoButton:active {
+    transform: scale(0.98); /* Slightly shrink button on click */
+}

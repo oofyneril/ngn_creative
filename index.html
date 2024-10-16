@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Story</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="story.css">  <!-- Link to story.css -->
+</head>
+<body>
+
+    <!-- XP Bar Display -->
+    <div id="xp-container" style="position: fixed; top: 10px; left: 10px;">
+        <label for="xpBar" id="xpLabel">XP: 0</label>
+        <meter id="xpBar" value="0" min="0" max="100" style="width: 200px;"></meter>
+    </div>
+
+    <!-- crystals Display at the top-right of the screen -->
+    <div id="crystalsDisplay" style="position: fixed; top: 10px; right: 10px; z-index: 100;">
+        <span id="crystalsCountLabel" class="crystals-counter">
+            Crystals: <span id="crystalsCounter">5</span>
+        </span>
+    </div>
+
+
+    <!-- Main Menu -->
+    <div id="mainMenu" class="main-menu">
+        <h1 class="game-title">Your Story</h1>
+        <button class="menu-button" onclick="startGame()">Play</button>
+        <button class="menu-button" onclick="openGacha()">Summon</button>
+        <button class="menu-button" onclick="openInventory()">Inventory</button>
+        <button id="openAchievementsButton" class="menu-button" onclick="openAchievements()">View Achievements</button>
+        <button class="archive-button" onclick="openArchives()">Archives</button>
+        <button id="storyModeButton" class="menu-button story-button" onclick="openStoryMode()">Story Mode</button>
+    </div>  
+
+    <!-- Play Section -->
+    <div id="gameContent" style="display: none;">
+        <!-- Timer Display -->
+        <div id="timerDisplay" class="timer-display">
+            Time Left: <span id="timer">20</span> seconds
+        </div>
+        
+        <!-- <h3 style="font-weight: bold; color: rgb(0, 0, 0); margin-top: 10px;">BOSS - Li REN</h3> Initial difficulty -->
+
+        <!-- Difficulty Display -->
+        <p id="difficultyLevel" style="font-weight: bold; color: rgb(112, 94, 61); margin-top: 10px;">Level: 1</p> <!-- Initial difficulty -->
+        <p id="bossStatus" style="font-weight: bold; color: red; margin-top: 10px;"></p> <!-- Display boss status -->
+        
+        <!-- Boss display -->
+        <div id="bossElement" style="display: flex; flex-direction: column; align-items: center;">
+            <div id="bossHealthBarContainer" style="width: 80%; background-color: red; height: 20px; margin: auto;">
+                <div id="bossHealthBar" style="background-color: green; width: 100%; height: 100%;"></div>
+            </div>
+            <!-- <img src="images/boss.png" alt="Boss" style="width: 30%; margin-top: 10px;"> -->
+        </div>
+
+        <!-- Basic Attack Button (single button for all characters) -->
+        <button id="basicAttackButton" class="attack-button" style="margin-top: 20px;" onclick="basicAttack()">Basic Attack</button>
+
+        <div id="selectedCharactersContainer" style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+            <!-- This is where the characters and their buttons will be displayed -->
+        </div>
+
+        <!-- <div id="attackButtonsContainer" style="display: flex; justify-content: center; gap: 40px; margin-top: 20px;"> -->
+            <!-- Attack and ability buttons will be added here -->
+        <!-- </div> -->
+
+        <!-- Reset Game Button -->
+        <button id="resetGameButton" class="menu-button" onclick="resetGame()">Reset Game</button>
+
+        <!-- Return to Main Menu Button (positioned to bottom-right) -->
+        <button class="return-button" onclick="returnToMenu()"></button>
+    </div>
+
+
+    
+
+    <!-- Gacha Section -->
+    <div id="gachaContent" style="display: none;">
+        <h2>CHARACTER SUMMON</h2>
+        
+        <!-- Gacha Animation Container -->
+        <div class="gacha-animation-container">
+            <!-- Gacha Ball -->
+            <div class="gacha-ball" id="gachaBall"></div>
+            <button id="gacha-Button" onclick="pullGacha()"></button>
+        </div>
+
+        
+    
+        <!-- Result Display -->
+        <div id="result" class="gacha-result"></div>
+
+        <button class="return-button" onclick="returnToMenu()"></button>
+    </div>
+
+    <!-- Inventory Section -->
+    <div id="inventoryModal" style="display: none;">
+        <h1>INVENTORY</h1>
+        <div id="inventory" class="inventory-grid">
+            <!-- Characters will be loaded here -->
+        </div>
+
+        <!-- Container for displaying multiple active characters -->
+        <div id="activeCharactersContainer">
+            <h4>Adventure Team</h4>
+            <div id="activeCharacters"></div> 
+        </div>
+
+        <!-- Return to Main Menu Button (positioned to bottom-right) -->
+        <button class="inv_return-button" onclick="returnToMenu()">Return</button>
+    </div>
+
+    <!-- Character Details Modal (Hidden until a character is clicked) -->
+    <div id="characterMenu" class="modal" style="display: none;">
+        <div id="characterDetails">
+            <!-- Character details will be loaded dynamically -->
+        </div>
+        <button class="return-button" onclick="closeCharacterMenu()"></button>
+    </div>
+
+    <!-- Achievements Section -->
+    <div id="achievementsModal" class="modal" style="display: none;">
+        <h2>Achievements</h2>
+        <div id="achievementsContent">
+            <p>No achievements recorded yet.</p>
+        </div>
+        <button class="return-button" onclick="closeAchievements()"></button>
+    </div>
+
+    <!-- Archive Section -->
+    <div id="archiveModal" class="modal" style="display: none;">
+        <h2>Character Archives</h2>
+        <div id="archivesContent" class="inventory-grid" style="right: 10px;">
+            <!-- Characters will be displayed here -->
+        </div>
+        <button class="return-button" onclick="closeArchives()"></button>
+    </div>
+
+    <!-- Story Mode Section -->
+    <div id="storyMode" class="story-mode" style="display: none;">
+        <div id="storyContainer" class="story-container">
+
+            <button id="toggleAutoButton" onclick="toggleAutoProceed()">Start Auto Proceed</button>
+
+            <!-- Character Name -->
+            <div id="characterName" class="character-name"></div>
+            
+            <!-- Character Image -->
+            <img id="storyCharacter" src="" alt="Character Image" class="character-image" />
+
+            <!-- Dialog Box -->
+            <div class="dialogue-box">
+                <p id="dialogText">[Dialog will appear here]</p>
+            </div>            
+
+            <!-- Next Button -->
+            <button id="nextButton" class="next-button" onclick="nextDialog()">Next</button>
+
+            <!-- Reset Story Button -->
+            <button class="resetStory-button" onclick="resetStoryMode()">Restart Story</button>
+
+            <!-- Return to Main Menu Button -->
+            <button class="return-button" onclick="closeStoryMode()"></button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="path-to-your-music-file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <!-- Link to your main game JavaScript file -->
+    <script src="script.js"></script>
+    <script src="story.js"></script> <!-- Link to the new JS file for story mode -->
+    <script src="abilities.js"></script> <!-- This contains useCharacterAbility() -->
+</body>
+</html>
+
+

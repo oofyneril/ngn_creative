@@ -1,0 +1,536 @@
+
+http://localhost:8000/
+
+
+
+
+1. "Bisclavret" (Marie de France)
+Character Name: Bisclavret
+Rarity: Ultra-Rare
+Description: A noble knight cursed to transform into a wolf. As Bisclavret, he retains his human honor and loyalty, which ultimately helps him regain his human form.
+Special Ability: Wolf’s Wisdom – Can transform into a wolf, gaining enhanced speed and strength for a limited time.
+Personality: Honorable and noble, but also tragic due to his cursed fate.
+
+
+
+2. "Laüstic" (Marie de France)
+Character Name: Lady of Laüstic
+Rarity: Rare
+Description: A woman trapped in a loveless marriage who communicates with her lover via the nightingale’s song. The bird becomes a symbol of their love.
+Special Ability: Song of Longing – Can summon the nightingale to reveal hidden items or reveal enemy weaknesses.
+Personality: Romantic, poetic, but ultimately tragic in her story.
+
+
+
+3. "Yonec" (Marie de France)
+Character Name: Yonec
+Rarity: Rare
+Description: The son of a noblewoman and a mystical knight. He avenges his parents' tragic love by slaying the cruel lord.
+Special Ability: Avenger’s Strike – Wields a mystical sword that deals extra damage against enemies that have wronged the player.
+Personality: Bold, righteous, and destined for greatness.
+
+
+4. "Kabuliwallah" (Rabindranath Tagore)
+Character Name: Kabuliwallah
+Rarity: Common
+Description: A traveling merchant from Afghanistan who forms a bond with a young girl in Calcutta. His love for his own daughter is reflected in this bond.
+Special Ability: Heart of a Father – Temporarily heals teammates or boosts their defense when a child character is present.
+Personality: Kind-hearted, reflective, with a hidden sadness from separation.
+
+
+5. "A Mansion in the Sky" (Goli Taraghi)
+Character Name: The Dreamer
+Rarity: Rare
+Description: A woman seeking a place of safety and peace, imagining a mansion in the sky as a refuge from her chaotic world.
+Special Ability: Sky Refuge – Creates a shield around the player’s team, reducing damage for a limited time.
+Personality: Thoughtful, introspective, and deeply connected to the idea of escapism.
+
+
+6. "Love" (Clarice Lispector)
+Character Name: Ana
+Rarity: Common
+Description: A housewife whose life is transformed by a single, unexpected moment of emotional revelation. She grapples with existential questions about love and meaning.
+Special Ability: Moment of Epiphany – Reveals hidden secrets on the battlefield or solves puzzles.
+Personality: Thoughtful, introspective, and overwhelmed by her internal realizations.
+
+
+7. Plato, "Meno"
+Character Name: Socrates
+Rarity: Ultra-Rare
+Description: The renowned philosopher who guides others through questions of virtue and knowledge.
+Special Ability: Question of Virtue – Confuses enemies with deep philosophical questions, reducing their attack power.
+Personality: Wise, calm, and endlessly curious.
+
+
+
+8. Zhuangzi (Chapters 2 and 29)
+Character Name: Zhuangzi
+Rarity: Rare
+Description: A philosopher who embraces the flow of life and the illusory nature of reality. Known for his dream of being a butterfly.
+Special Ability: Butterfly Dream – Can phase through enemies or avoid damage for a few turns.
+Personality: Tranquil, whimsical, and deeply connected to the Tao.
+
+
+9. "A Midsummer Night's Dream" (William Shakespeare)
+Character Name: Puck
+Rarity: Ultra-Rare
+Description: The mischievous fairy who serves Oberon and causes chaos with his love spells and trickery.
+Special Ability: Mischief Maker – Casts random status effects on enemies (confusion, charm, sleep).
+Personality: Playful, clever, and a trickster at heart.
+
+
+
+// Function to handle clicks on the "attack" button (damages the boss based on selected characters' attack)
+// function basicAttack() {
+//     if (boss.currentHealth > 0 && activeCharacters.length > 0) {
+//         let totalDamage = 0;
+
+//         // Calculate total damage based on each selected character's attack stat
+//         activeCharacters.forEach(char => {
+//             totalDamage += char.attack;  // Add each character's attack stat to the total damage
+//         });
+
+//         // Deal the total damage to the boss
+//         boss.currentHealth -= totalDamage;
+//         updateBossHealthBar();  // Update boss health bar display
+
+//         // Display damage dealt in the console for debugging purposes
+//         console.log(`Dealt ${totalDamage} damage to the boss!`);
+//     }
+
+//     // Check if the boss is defeated
+//     if (boss.currentHealth <= 0) {
+//         bossDefeated();  // Handle boss defeat
+//     }
+// }
+
+
+// function basicAttackWithCharacter(character) {
+//     if (boss.currentHealth > 0) {
+//         const damage = character.attack;  // Use the selected character's attack stat
+
+//         // Deal damage to the boss
+//         boss.currentHealth -= damage;
+//         updateBossHealthBar();  // Update boss health bar display
+
+//         // Display damage dealt in the console for debugging purposes
+//         console.log(`${character.name} dealt ${damage} damage to the boss!`);
+//     }
+
+//     // Check if the boss is defeated
+//     if (boss.currentHealth <= 0) {
+//         bossDefeated();  // Handle boss defeat
+//     }
+// }
+
+// Function to handle attacking the boss with a selected character
+// function basicAttackWithCharacter(character) {
+//     if (boss.currentHealth > 0) {
+//         const damage = character.attack;  // Use the selected character's attack stat
+
+//         // Deal damage to the boss
+//         boss.currentHealth -= damage;
+//         updateBossHealthBar();  // Update boss health bar display
+
+//         // Display damage dealt in the console for debugging purposes
+//         console.log(`${character.name} dealt ${damage} damage to the boss!`);
+
+//         // Animate the character (attack)
+//         const selectedCharactersContainer = document.getElementById('selectedCharactersContainer');
+//         const charImage = selectedCharactersContainer.querySelector(`img[alt="${character.name}"]`);
+//         if (charImage) {
+//             charImage.classList.add('character-attack');
+//             hitSound.play();
+//             setTimeout(() => {
+//                 charImage.classList.remove('character-attack');
+//             }, 500);  // Remove the animation after 0.5s (same as the animation duration)
+//         }
+//     }
+
+//     // Check if the boss is defeated
+//     if (boss.currentHealth <= 0) {
+//         bossDefeated();  // Handle boss defeat
+//     }
+// }
+
+
+
+
+
+    <!-- Final Result Display -->
+    <div id="finalResult" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 10px; text-align: center; z-index: 1000;">
+        <h2>Game Over!</h2>
+        <p id="finalDifficulty">You reached Level: </p>
+        <button onclick="resetGame()" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 10px; cursor: pointer;">Play Again</button>
+    </div>
+
+
+
+    // Function to end the game
+function endGame() {
+    // Disable actions and show a game over message
+    disableGameActions();  // Disable attacks and abilities
+    showFinalResult();  // Show the final result
+}
+
+
+
+// Function to display the final result (difficulty reached)
+function showFinalResult() {
+    // Get the final result div and make it visible
+    const finalResultDiv = document.getElementById('finalResult');
+    const finalDifficulty = document.getElementById('finalDifficulty');
+    
+    // Update the difficulty level display
+    finalDifficulty.innerText = `You reached Level: ${difficulty}`;
+    
+    // Show the result container
+    finalResultDiv.style.display = 'block';
+}
+
+
+        <!-- Timer Display with Border -->
+        <div id="timerDisplay" style="position: fixed; top: 120px; right: 120px; font-size: 20px; color: white; 
+            border: 2px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.5);">
+            Time Left: <span id="timer">60</span> seconds
+        </div>
+
+
+    <!-- Story Mode Section -->
+    <div id="storyMode" class="story-mode" style="display: none;">
+        <div id="storyContainer" class="story-container">
+            <!-- Character Image -->
+            <img id="storyCharacter" src="" alt="Character Image" class="character-image" />
+            <!-- Dialog Box -->
+            <div class="dialog-box">
+                <p id="dialogText">[Dialog will appear here]</p>
+            </div>
+            <!-- Next Button -->
+            <button id="nextButton" class="menu-button next-button" onclick="nextDialog()">Next</button>
+        </div>
+    </div>
+
+// Function to show dialog
+function showDialog() {
+    const dialog = storyDialogs[currentDialogIndex];
+    const characterImage = document.getElementById('storyCharacter');
+    const dialogText = document.getElementById('dialogText');
+    
+    // Update character image and text
+    characterImage.src = dialog.character;
+    characterImage.style.opacity = 1; // Show character
+    dialogText.innerText = dialog.text;
+}
+
+
+// let currentDialogIndex = 0;
+
+// let storyDialogs = [
+//     {
+//         text: "Welcome to the Clash of Stories, I am Meno.",
+//         characterImage: "images/mary.png"
+//     },
+//     {
+//         text: "This journey will take us through various stories to uncover virtue.",
+//         characterImage: "images/meno.png"
+//     },
+//     {
+//         text: "Together, we will learn from different characters and their experiences.",
+//         characterImage: "images/meno.png"
+//     }
+// ];
+
+// // Function to update the dialog display
+// function updateDialogDisplay() {
+//     const dialogContainer = document.getElementById('dialogContainer');
+//     dialogContainer.innerHTML = ''; // Clear previous dialogs
+
+//     // Loop through all the dialogs and update the display
+//     storyDialogs.forEach((dialog, index) => {
+//         const dialogItem = document.createElement('div');
+//         dialogItem.classList.add('dialog-item');
+        
+//         // Add styles based on whether it's the current or previous dialog
+//         if (index === currentDialogIndex) {
+//             dialogItem.classList.add('active-dialog'); // Highlight current dialog
+//         } else if (index < currentDialogIndex) {
+//             dialogItem.classList.add('inactive-dialog'); // Darken previous dialogs
+//         }
+
+//         // Add character image and dialog text
+//         dialogItem.innerHTML = `
+//             <img src="${dialog.characterImage}" alt="Character Image" class="character-image">
+//             <p class="dialog-text">${dialog.text}</p>
+//         `;
+
+//         // Append the dialog to the container
+//         dialogContainer.appendChild(dialogItem);
+//     });
+// }
+
+// // Function to move to the next dialog
+// function nextDialog() {
+//     if (currentDialogIndex < storyDialogs.length - 1) {
+//         currentDialogIndex++;
+//         updateDialogDisplay(); // Update the dialog display
+//     } else {
+//         // End of the story
+//         alert("End of the story");
+//         document.getElementById('nextButton').disabled = true; // Disable Next button
+//     }
+// }
+
+// // Function to start story mode
+// function openStoryMode() {
+//     document.getElementById('mainMenu').style.display = 'none';
+//     document.getElementById('storyMode').style.display = 'block';
+//     // Optionally disable the Next button until the story is reopened
+//     document.getElementById('nextButton').disabled = true;
+//     updateDialogDisplay(); // Start with the first dialog
+// }
+
+// // Function to close story mode
+// function closeStoryMode() {
+//     document.getElementById('storyMode').style.display = 'none';
+//     document.getElementById('mainMenu').style.display = 'flex';
+
+//     // Optionally disable the Next button until the story is reopened
+//     document.getElementById('nextButton').disabled = false;
+// }
+
+// function resetStoryMode() {
+//     // Reset the story progress
+//     currentDialogIndex = 0;
+
+//     // Clear the dialog display (optional)
+//     const dialogContainer = document.getElementById('dialogContainer');
+//     dialogContainer.innerHTML = ''; // Clear previous dialogs;
+// }
+
+
+    storyCharacter.classList.remove('character-left', 'character-right', 'character-visible');  // Reset any previous animation
+
+    // Show the character, if it's the same character, no transition
+    if (previousCharacter !== currentDialog.characterImage) {
+        // Set character direction (left or right)
+        if (currentDialog.direction === 'left') {
+            storyCharacter.classList.add('character-left');
+        } else if (currentDialog.direction === 'right') {
+            storyCharacter.classList.add('character-right');
+        }
+    }
+
+// Function to start typing the dialog letter by letter
+function typeDialog() {
+    const dialogTextElement = document.getElementById('dialogText');
+    const storyCharacter = document.getElementById('storyCharacter');
+
+    const currentDialog = storyDialogs[currentDialogIndex];
+    const text = currentDialog.text;
+
+    // If the current text is the same as the previous, don't update anything
+    if (text === previousText) {
+        return;
+    } else {
+        // Update the previousText and previousCharacter to the current ones
+        previousText = text;
+        previousCharacter = currentDialog.characterImage;
+
+        dialogTextElement.innerHTML = '';  // Clear previous dialog
+        storyCharacter.src = currentDialog.characterImage;  // Set the character image
+
+        // Add 'visible' class to transition character into view (you can style this in CSS for a smoother transition)
+        setTimeout(() => {
+            storyCharacter.classList.add('character-visible');
+        }, 100);  // Delay to give animation effect
+
+        // Reset letterIndex for new dialog
+        letterIndex = 0;
+        isTyping = true;
+        dialogSound.play();
+
+        // Function to type each letter
+        function typeLetter() {
+            if (letterIndex < text.length) {
+                document.getElementById('nextButton').disabled = true;
+                document.getElementById('resetGameButton').disabled = true;
+                dialogTextElement.innerHTML += text.charAt(letterIndex);
+                letterIndex++;
+                setTimeout(typeLetter, typingSpeed);  // Type the next letter after a delay
+            } else {
+                isTyping = false;  // Typing finished
+                document.getElementById('nextButton').disabled = false;
+                document.getElementById('resetGameButton').disabled = false;
+            }
+        }
+        typeLetter();  // Start typing the first letter
+    }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mary woke up in a dense, foggy medieval forest, she wonders around while reflecting on her questions about life. The branches crack underfoot, and she feels a presence in the shadows. Suddenly, she sees a large, fearsome wolf standing in front of her, growling softly.
+
+Mary:
+(Startled and backing away)
+“Who—what are you?”
+
+The wolf growls, its eyes locking with hers. Just as she prepares to flee, the creature begins to transform. His face slowly shifts, turning human, but the rest of his body remains that of a beast. It’s the face of a knight.
+
+Bisclavret:
+(In a calm voice)
+“Do not be afraid.”
+
+Mary:
+(Wary but curious)
+“You’re... you’re a man?”
+
+Bisclavret:
+“I was. A knight, once. My name is Bisclavret.”
+
+They sit by the edge of the forest, the mist swirling around them as Bisclavret begins to recount his story.
+
+Bisclavret:
+“I was a knight, loyal to my king and devoted to my country. But I harbored a secret... I was cursed to become a wolf by night. I trusted my secret with my wife, my love, but she betrayed me, stole my clothes, and left me trapped in this form.”
+
+Mary:
+(Sympathetic)
+“That’s awful. Why would she do such a thing?”
+
+Bisclavret:
+“She desired another man. For a time, I lived as this beast, lost in the wild, until the king discovered me. I showed him loyalty, and in return, he helped me regain my human form.”
+
+Mary:
+(Frowning)
+“And your wife?”
+
+Bisclavret:
+“She was punished, and I returned to serve the king. But now, I live between two worlds—man and beast, loyalty and betrayal.”
+
+Mary:
+(Thoughtful)
+“Loyalty... it cost you everything, didn’t it?”
+
+Bisclavret:
+“Loyalty demands much. But without it, we are nothing. We are just wolves, wandering in the dark.”
+
+Mary:
+(Conflicted)
+“But is it worth it? If loyalty only leads to betrayal?”
+
+Bisclavret:
+“There is no easy answer. We must choose what we value most, even when it hurts.”
+
+Lesson:
+Mary begins to understand the complexity of loyalty—it can bind us to others, but it can also be a source of pain and betrayal. As Bisclavret speaks, she realizes that loyalty is both a burden and a gift, shaping who we are, for better or worse.
+
+
+
+Setting: After their conversation, Mary and Bisclavret walk deeper into the forest. The air thickens with magic, and the forest transforms, the trees glowing softly in the moonlight. The atmosphere shifts from eerie to enchanted.
+
+Mary:
+(Looking around, sensing the magic)
+“What is this place? It feels... different.”
+
+Bisclavret:
+(Hesitant)
+“We’re entering the realm of the fae. Be cautious. Not all is as it seems here.”
+
+Suddenly, the trees part to reveal a clearing bathed in moonlight, where a beautiful figure stands—Titania, Queen of the Fairies. She is surrounded by soft, glowing butterflies and magical creatures.
+
+Titania:
+(Smiling gently)
+“Ah, travelers. What brings a knight-wolf and a mortal into my realm?”
+
+Mary:
+(In awe)
+“I... I didn’t know this place existed.”
+
+Bisclavret:
+(Respectful)
+“We mean no harm, Queen Titania. We are merely passing through.”
+
+Titania:
+(Eyes twinkling, intrigued by Mary)
+“And you, child. You carry questions. A deep yearning. I can feel it.”
+
+Mary:
+(Curious, stepping closer)
+“I... I’m looking for answers. About life, about purpose.”
+
+Titania:
+(Fondly)
+“You remind me of myself when I was young, full of wonder and longing. Stay a while, and perhaps you’ll find what you seek.”
+
+Puck Spies and Reports to Oberon
+Unbeknownst to them, Puck, Oberon’s mischievous servant, is hiding in the shadows, spying on the interaction. He watches as Titania’s fondness for Mary grows.
+
+Puck:
+(Whispering to himself)
+“Well, well, what do we have here? A new friend for Titania? Oberon won’t like this.”
+
+Puck vanishes into the mist, hurrying to Oberon’s lair in the heart of the enchanted forest. He finds the fairy king, brooding in his throne.
+
+Puck:
+(Gleefully)
+“My lord, I have news! Titania has made a new friend—a mortal, no less! And she seems quite taken with her.”
+
+Oberon:
+(Eyes narrowing, jealousy rising)
+“A mortal? Again? Titania has gone too far this time.”
+
+Puck:
+(Smirking)
+“What would you have me do, my king?”
+
+Oberon:
+(Determined)
+“I’ll not let her fawn over this mortal while she ignores me. It’s time to settle this once and for all. Puck, find the wings of the ‘Dream’ butterfly.”
+
+Puck:
+(Surprised)
+“The Dream butterfly, my lord? It holds great power.”
+
+Oberon:
+(Resolute)
+“Exactly. Its wings will bring dreams and illusions so strong that even Titania cannot resist. Go now, and return with them.”
+
+Puck bows and vanishes in a swirl of mist, setting off on his quest to retrieve the wings of the Dream Butterfly.
+
+Titania's Growing Fondness for Mary
+Back in the clearing, Titania continues to converse with Mary, offering gentle wisdom. She senses that Mary is searching for something more than just answers—something deep within herself.
+
+Titania:
+(Warmly)
+“There’s more to life than simply finding answers, dear Mary. Sometimes, the magic lies in the questions we never stop asking.”
+
+Mary:
+(Thoughtful)
+“I’ve never thought of it that way.”
+
+Bisclavret:
+(Uneasy, sensing trouble)
+“We should move on, Mary. The fae realm is full of tricks.”
+
+Titania:
+(Softly, but firm)
+“Stay as long as you like, child. There is much you can learn here. But be wary of those who wish to twist dreams into chains.
