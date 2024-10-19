@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Story</title>
+    <title>Many Stories</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="story.css">  <!-- Link to story.css -->
 </head>
@@ -25,11 +25,11 @@
 
     <!-- Main Menu -->
     <div id="mainMenu" class="main-menu">
-        <h1 class="game-title">Your Story</h1>
+        <h1 class="game-title">MANY Stories</h1>
         <button class="menu-button" onclick="startGame()">Play</button>
         <button class="menu-button" onclick="openGacha()">Summon</button>
         <button class="menu-button" onclick="openInventory()">Inventory</button>
-        <button id="openAchievementsButton" class="menu-button" onclick="openAchievements()">View Achievements</button>
+        <button id="openAchievementsButton" class="menu-button" onclick="openAchievements()">Achievements</button>
         <button class="archive-button" onclick="openArchives()">Archives</button>
         <button id="storyModeButton" class="menu-button story-button" onclick="openStoryMode()">Story Mode</button>
     </div>  
@@ -124,9 +124,13 @@
     <div id="achievementsModal" class="modal" style="display: none;">
         <h2>Achievements</h2>
         <div id="achievementsContent">
-            <p>No achievements recorded yet.</p>
+            <ul id="achievementsList">
+                <!-- Achievements will be dynamically loaded here -->
+            </ul>
         </div>
-        <button class="return-button" onclick="closeAchievements()"></button>
+        <!-- Reset Button -->
+        <button class="reset-button" onclick="resetAchievements()">Reset Achievements</button>
+        <button class="close-button" onclick="closeAchievements()">Close</button>
     </div>
 
     <!-- Archive Section -->

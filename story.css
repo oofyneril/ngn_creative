@@ -83,11 +83,11 @@
 
 /* Character Image Styling */
 .character-image {
-    width: 180px;
+    width: 250px;
     height: auto;
     border-radius: 20px;
     position: fixed;
-    top: 370px;
+    top: 360px;
     transform: translateY(-50%);  /* Vertically center */
     opacity: 0;  /* Start hidden */
     transition: all 0.5s ease-out;
@@ -126,8 +126,8 @@
     width: 180px;
     height: auto;
     position: fixed;
-    top: 240px;
-    left: 150px;
+    top: 210px;
+    left: 160px;
 
 }
 

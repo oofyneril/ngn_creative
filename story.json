@@ -32,7 +32,7 @@
         },
         {
             "text": "The grasshopper jumps onto your shoulder...",
-            "character": "Author",
+            "character": "Grasshopper",
             "characterImage": "images/grasshopper.png"
         },
         {
@@ -57,23 +57,23 @@
         },
         {
             "text": "Do not be alarmed as I am speaking to you in a form of a grasshopper.",
-            "character": "Grasshopper",
+            "character": "AUTHOR",
             "characterImage": "images/grasshopper.png"
         },
         {
             "text": "And I am going to send you on a journey of discovery, learn well my creation!",
-            "character": "Grasshopper",
+            "character": "AUTHOR",
             "characterImage": "images/grasshopper.png"
         },
         {
             "text": "Discover your own meaning through the lens of other's experiences.",
-            "character": "Grasshopper",
+            "character": "AUTHOR",
             "characterImage": "images/grasshopper.png"
         },
         {
             "text": "Mary woke up in a dense, foggy medieval forest, she wonders around while reflecting on her questions about life.",
-            "character": "Author",
-            "characterImage": ""
+            "character": "NARRATIVE",
+            "characterImage": "NARRATIVE"
         },
         {
             "text": "Who—what are you?",
@@ -96,7 +96,17 @@
             "characterImage": "images/bisclavret.png"
         },
         {
-            "text": "I was a knight, loyal to my king and devoted to my country. But I harbored a secret... I was cursed to become a wolf by night.",
+            "text": "I was a knight, loyal to my king and devoted to my country.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "But I harbored a secret... I was cursed to become a wolf by night.",
+            "character": "Bisclavret",
+            "characterImage": "images/bisclavret.png"
+        },
+        {
+            "text": "My love, after finding out the truth of the matter, she betrayed me",
             "character": "Bisclavret",
             "characterImage": "images/bisclavret.png"
         },
@@ -151,11 +161,6 @@
             "characterImage": "images/titania.png"
         },
         {
-            "text": "I... I’m looking for answers. About life, about purpose.",
-            "character": "Mary",
-            "characterImage": "images/mary.png"
-        },
-        {
             "text": "Stay a while, and perhaps you’ll find what you seek.",
             "character": "Titania",
             "characterImage": "images/titania.png"
@@ -181,7 +186,12 @@
             "characterImage": "images/oberon.png"
         },
         {
-            "text": "There’s more to life than simply finding answers, dear Mary. Sometimes, the magic lies in the questions we never stop asking.",
+            "text": "There’s more to life than simply finding answers, dear Mary.",
+            "character": "Titania",
+            "characterImage": "images/titania.png"
+        },
+        {
+            "text": "Sometimes, the magic lies in the questions we never stop asking.",
             "character": "Titania",
             "characterImage": "images/titania.png"
         },
@@ -197,6 +207,11 @@
         },
         {
             "text": "Stay as long as you like, child. There is much you can learn here. But be wary of those who wish to twist dreams into chains.",
+            "character": "Titania",
+            "characterImage": "images/titania.png"
+        },
+        {
+            "text": "But be wary of those who wish to twist dreams into chains.",
             "character": "Titania",
             "characterImage": "images/titania.png"
         }

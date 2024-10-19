@@ -82,7 +82,8 @@ function startGame() {
     difficulty = 1;  // Reset difficulty back to 1
     boss.maxHealth = 200;  // Reset boss health to initial value
     boss.currentHealth = boss.maxHealth;  // Make sure current health is reset too
-    startTimer();
+    resetFight();
+    resetGame()
     // Update the boss health bar when re-entering
     updateBossHealthBar();
 }
@@ -126,8 +127,12 @@ function gameOver() {
     gameOverMessage.id = 'gameOverMessage';
 
     // Award 8 crystals points for each boss kill
-    crystalsCount += (7*(difficulty-1));  
+    crystalsCount += (7*(difficulty-1));
     document.getElementById('crystalsCounter').innerText = crystalsCount;  // Update crystals counter at the top left
+
+    let currentLevel = difficulty; // Assuming 'difficulty' is your current level
+    saveLevel(currentLevel);
+    
 
     // Style the game over message with the CSS you mentioned
     gameOverMessage.innerHTML = `
@@ -267,7 +272,7 @@ function resetFight() {
 
 // Function to reset the fight
 function resetGame() {
-
+    clickSound.play();
     // Remove the game over message from the screen
     const gameOverMessage = document.getElementById('gameOverMessage');
     if (gameOverMessage) {
@@ -375,6 +380,7 @@ function pullGacha() {
         crystalsCount -= crystalsCost;
         updatecrystalsDisplay();
 
+        clickSound.play();
         summonSound.play();
         // Simulate the gacha process (e.g., after 3 seconds reveal the character)
         setTimeout(() => {
@@ -569,6 +575,7 @@ function openCharacterMenu() {
 }
 
 function closeCharacterMenu() {
+    clickSound.play();
     document.getElementById('characterMenu').style.display = 'none';
 }
 
@@ -661,6 +668,7 @@ function openArchives() {
 function closeArchives() {
     document.getElementById('archiveModal').style.display = 'none';  // Hide the Archives modal
     document.getElementById('mainMenu').style.display = 'flex';  // Show the main menu
+    clickSound.play();
 }
 
 // Function to populate the Archives with all characters
@@ -688,5 +696,47 @@ function openStory() {
     window.open('story.html', '_self');  // Open in the same tab
 }
 
+//Achievement
+// Function to save the current level when the game is over
+function saveLevel(level) {
+    let levels = JSON.parse(localStorage.getItem('achievements')) || [];
+    levels.push(level);
 
+    // Sort levels in descending order
+    levels.sort((a, b) => b - a);
+
+    // Store in local storage
+    localStorage.setItem('achievements', JSON.stringify(levels));
+}
+
+// Function to load and display achievements
+function loadAchievements() {
+    const achievementsList = document.getElementById('achievementsList');
+    achievementsList.innerHTML = ''; // Clear the list
+
+    let levels = JSON.parse(localStorage.getItem('achievements')) || [];
+
+    levels.forEach((level, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Level Reached: ${level}`;
+        achievementsList.appendChild(listItem);
+    });
+}
+
+function resetAchievements() {
+    localStorage.removeItem('achievements'); // Remove the achievements key from local storage
+    openAchievements();
+}
+
+
+// Function to open the achievements modal
+function openAchievements() {
+    loadAchievements();
+    document.getElementById('achievementsModal').style.display = 'block';
+}
+
+// Function to close the achievements modal
+function closeAchievements() {
+    document.getElementById('achievementsModal').style.display = 'none';
+}
 

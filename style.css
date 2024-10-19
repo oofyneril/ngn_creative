@@ -681,7 +681,7 @@ meter::-webkit-meter-optimum-value {
 }
 
 
-/* Achievements Modal Styles */
+/* view details Modal Styles */
 .modal {
     display: none;  /* Hidden by default */
     position: fixed;
@@ -699,28 +699,52 @@ meter::-webkit-meter-optimum-value {
     border-radius: 10px;
 }
 
-/* Achievement Item Styles */
-.achievement-item {
+/* Achievements Modal Styles */
+#achievementsModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Style for Achievement List */
+#achievementsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#achievementsList li {
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
 }
 
-.achievement-item h4 {
-    margin-bottom: 5px;
+/* Button Styling */
+.close-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.achievement-item p {
-    margin: 0;
-    font-size: 16px;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #ccc;
-    margin: 10px 0;
+.close-button:hover {
+    background-color: #45a049;
 }
 
 /* Timer Display Styling */
