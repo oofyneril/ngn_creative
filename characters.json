@@ -1,40 +1,14 @@
 {
   "characters": [
     {
-      "name": "Bisclavret",
-      "rarity": "Rare",
-      "ability": "Feral Beast",
-      "abilityDescription": "In his beastly form, he strikes fear, lowering enemy's health by 20%.",
-      "description": "A noble knight cursed to transform into a wolf. As Bisclavret, he retains his human honor and loyalty, which ultimately helps him regain his human form.",
-      "image": "images/bisclavret_card.png",
-      "char": "images/bisclavret.png"
-    },
-    {
-      "name": "Lady of Laüstic",
-      "rarity": "Rare",
-      "ability": "Song of Longing",
-      "abilityDescription": "Summons a nightingale to reveal weaknesses, enable players to see the boss's remaining health.",
-      "description": "A woman trapped in a loveless marriage who communicates with her lover via the nightingale’s song. The bird becomes a symbol of their love.",
-      "image": "images/laustic_card.png",
-      "char": "images/laustic.png"
-    },
-    {
-      "name": "Yonec",
-      "rarity": "Rare",
-      "ability": "Avenger’s Strike",
-      "abilityDescription": "Deals extra damage to enemies that have harmed the player, increasing book collection.",
-      "description": "The son of a noblewoman and a mystical knight. He avenges his parents' tragic love by slaying the cruel lord.",
-      "image": "images/yonec_card.png",
-      "char": "images/yonec.png"
-    },
-    {
       "name": "Kabuliwallah",
       "rarity": "Common",
       "ability": "Heart of a Father",
       "abilityDescription": "Heals teammates or boosts defense when a child character is present.",
       "description": "A traveling merchant from Afghanistan who forms a bond with a young girl in Calcutta.",
       "image": "images/kabuliwallah_card.png",
-      "char": "images/kabuliwallah.png"
+      "char": "images/kabuliwallah.png",
+      "icon": "images/heart_of_father.png"
     },
     {
       "name": "Maheen Banou",
@@ -43,7 +17,8 @@
       "abilityDescription": "Creates a shield around the player’s team, reducing damage and doubling books for a short time.",
       "description": "A woman seeking a place of safety and peace, imagining a mansion in the sky as a refuge.",
       "image": "images/maheen_card.png",
-      "char": "images/maheen.png"
+      "char": "images/maheen.png",
+      "icon": "images/sky_refuge.png"
     },
     {
       "name": "Ana",
@@ -52,52 +27,8 @@
       "abilityDescription": "After a revolutionary experience, she has widen her view, enabling players to see the boss's remaining health..",
       "description": "A housewife transformed by a single, unexpected moment of emotional revelation.",
       "image": "images/ana_card.png",
-      "char": "images/ana.png"
-    },
-    {
-      "name": "Socrates",
-      "rarity": "Ultra-Rare",
-      "ability": "Socratic Response",
-      "abilityDescription": "Confuses enemies with philosophical replies, reducing their confidence and wasting time.",
-      "description": "The renowned philosopher who guides others to the answer using 'socratic' questions.",
-      "image": "images/socrates_card.png",
-      "char": "images/socrates.png"
-    },
-    {
-      "name": "ZhuangZhou",
-      "rarity": "Super-Rare",
-      "ability": "Butterfly Dream",
-      "abilityDescription": "Phases through enemies or avoids damage, allowing the player to collect extra books.",
-      "description": "A philosopher who embraces the flow of life and the illusory nature of reality.",
-      "image": "images/zhuangzhou_card.png",
-      "char": "images/zhuangzhou.png"
-    },
-    {
-      "name": "Puck",
-      "rarity": "Super-Rare",
-      "ability": "Mischief Maker",
-      "abilityDescription": "Casts random status effects on enemies (confusion, charm, sleep), doubling books gained after an effect is applied.",
-      "description": "The mischievous fairy who serves Oberon and causes chaos with the love potion.",
-      "image": "images/puck_card.png",
-      "char": "images/puck.png"
-    },
-    {
-      "name": "Oberon",
-      "rarity": "Ultra-Rare",
-      "ability": "King's Command",
-      "abilityDescription": "Commands enemies, causing confusion and enhancing allies' strength, doubling XP.",
-      "description": "The powerful and mystical king of the fairies, known for his manipulation and jealousy.",
-      "image": "images/oberon_card.png",
-      "char": "images/oberon.png"
-    },
-    {
-      "name": "Titania",
-      "rarity": "Ultra-Rare",
-      "ability": "Queen's Grace",
-      "abilityDescription": "Heals allies with her magical touch, boosting their strength and XP gain.",
-      "description": "The enchanting queen of the fairies, full of grace and kindness.",
-      "image": "images/titania_card.png",
-      "char": "images/titania.png"
+      "char": "images/ana.png",
+      "icon": "images/moment_of_e.png"
     },
     {
       "name": "Meno",
@@ -106,7 +37,88 @@
       "abilityDescription": "Engages enemies in philosophical debates, briefly stunning them and increasing books earned.",
       "description": "A character from Plato's dialogues, whose in search of the nature of virtue.",
       "image": "images/meno_card.png",
-      "char": "images/meno.png"
+      "char": "images/meno.png",
+      "icon": "images/meno_paradox.png"
+    },
+    {
+      "name": "Bisclavret",
+      "rarity": "Rare",
+      "ability": "Feral Beast",
+      "abilityDescription": "In his beastly form, he strikes fear, lowering enemy's health by 20%.",
+      "description": "A noble knight cursed to transform into a wolf. As Bisclavret, he retains his human honor and loyalty, which ultimately helps him regain his human form.",
+      "image": "images/bisclavret_card.png",
+      "char": "images/bisclavret.png",
+      "icon": "images/feral_beast.png"
+    },
+    {
+      "name": "Lady of Laüstic",
+      "rarity": "Rare",
+      "ability": "Song of Longing",
+      "abilityDescription": "Summons a nightingale to reveal weaknesses, enable players to see the boss's remaining health.",
+      "description": "A woman trapped in a loveless marriage who communicates with her lover via the nightingale’s song. The bird becomes a symbol of their love.",
+      "image": "images/laustic_card.png",
+      "char": "images/laustic.png",
+      "icon": "images/song_of_longing.png"
+    },
+    {
+      "name": "Yonec",
+      "rarity": "Rare",
+      "ability": "Avenger’s Strike",
+      "abilityDescription": "Deals extra damage to enemies that have harmed the player, increasing book collection.",
+      "description": "The son of a noblewoman and a mystical knight. He avenges his parents' tragic love by slaying the cruel lord.",
+      "image": "images/yonec_card.png",
+      "char": "images/yonec.png",
+      "icon": "images/avenger_strike.png"
+    },
+    {
+      "name": "ZhuangZhou",
+      "rarity": "Super-Rare",
+      "ability": "Butterfly Dream",
+      "abilityDescription": "Phases through enemies or avoids damage, allowing the player to collect extra books.",
+      "description": "A philosopher who embraces the flow of life and the illusory nature of reality.",
+      "image": "images/zhuangzhou_card.png",
+      "char": "images/zhuangzhou.png",
+      "icon": "images/butterfly_dream.png"
+    },
+    {
+      "name": "Puck",
+      "rarity": "Super-Rare",
+      "ability": "Mischief Maker",
+      "abilityDescription": "Casts random status effects on enemies (confusion, charm, sleep), doubling books gained after an effect is applied.",
+      "description": "The mischievous fairy who serves Oberon and causes chaos with the love potion.",
+      "image": "images/puck_card.png",
+      "char": "images/puck.png",
+      "icon": "images/mischief_maker.png"
+    },
+    {
+      "name": "Oberon",
+      "rarity": "Ultra-Rare",
+      "ability": "King's Command",
+      "abilityDescription": "Commands enemies, causing confusion and enhancing allies' strength, doubling XP.",
+      "description": "The powerful and mystical king of the fairies, known for his manipulation and jealousy.",
+      "image": "images/oberon_card.png",
+      "char": "images/oberon.png",
+      "icon": "images/king_command.png"
+    },
+    {
+      "name": "Titania",
+      "rarity": "Ultra-Rare",
+      "ability": "Queen's Grace",
+      "abilityDescription": "Heals allies with her magical touch, boosting their strength and XP gain.",
+      "description": "The enchanting queen of the fairies, full of grace and kindness.",
+      "image": "images/titania_card.png",
+      "char": "images/titania.png",
+      "icon": "images/queen_grace.png"
+    },
+    {
+      "name": "Socrates",
+      "rarity": "Ultra-Rare",
+      "ability": "Socratic Response",
+      "abilityDescription": "Confuses enemies with philosophical replies, reducing their confidence and wasting time.",
+      "description": "The renowned philosopher who guides others to the answer using 'socratic' questions.",
+      "image": "images/socrates_card.png",
+      "char": "images/socrates.png",
+      "icon": "images/socratic_response.png"
     }
   ]
 }

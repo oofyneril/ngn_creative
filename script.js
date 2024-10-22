@@ -549,18 +549,33 @@ function showCharacterDetails(characterName) {
         characterDetailsDiv.classList.add('character-details', rarityClass);  // Add the corresponding rarity class
         
         characterDetailsDiv.innerHTML = `
-            <h2 style="
-            font-size: 28px; 
-            font-weight: bold; 
-            margin-bottom: 10px;">
-            ${character.name} (${character.rarity})
-            </h2>
 
-            <img src="${character.char}" alt="${character.name}" style="width:200px; height:90%;">
 
-            <p><strong>Ability:</strong> ${character.ability} - ${character.abilityDescription}</p>
+            <div class="character-details-container">
+                <!-- Left section for image and description -->
+                <div class="character-left-section">
+                    <img src="${character.char}" alt="${character.name}" style="width:350px; height:100%;">
+                </div>
 
-            <p style="font-size: 16px; margin-bottom: 0;"><strong>Description:</strong> ${character.description}</p>
+                <!-- Right section for ability -->
+                <div class="character-right-section">
+                    <h2 style="
+                    font-size: 28px; 
+                    font-weight: bold;
+                    right: 600px; 
+                    margin-bottom: 10px;">
+                    ${character.name}
+                    </h2>
+
+                    <!-- Ability Section -->
+                    <p><strong>Ability:</strong> ${character.ability}</p>
+                    <img src="${character.icon}" alt="${character.name}" style="width:100px; height: 100px;">
+                    <p><strong>${character.abilityDescription}</strong></p>
+
+                    <!-- Description Section -->
+                    <p style="font-size: 16px; margin-bottom: 0;"><strong>Description:</strong> ${character.description}</p>
+                </div>
+            </div>
         `;
         openCharacterMenu();
     } else {
@@ -683,7 +698,9 @@ function updateArchivesDisplay() {
         const archiveItem = `
             <div class="inventory-item ${rarityClass}">
                 <img src="${character.image}" alt="${character.name}" style="width:100px;">
-                <p style="color: #FFFF;"><strong>Ability:</strong> ${character.ability}</p>
+                <div class="button-container">
+                    <button class="view-details-button" onclick="showCharacterDetails('${character.name}')">View Details</button>
+                </div>
             </div>
         `;
 
