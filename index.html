@@ -26,12 +26,12 @@
     <!-- Main Menu -->
     <div id="mainMenu" class="main-menu">
         <h1 class="game-title">Game of Stories</h1>
-        <button class="menu-button" onclick="startGame()">Play</button>
-        <button class="menu-button" onclick="openGacha()">Summon</button>
-        <button class="menu-button" onclick="openInventory()">Inventory</button>
+        <button class="gachamenu-button" onclick="openGacha()">Summon</button>
+        <button class="invmenu-button" onclick="openInventory()">Inventory</button>
         <button id="openAchievementsButton" class="menu-button" onclick="openAchievements()">Achievements</button>
-        <button class="archive-button" onclick="openArchives()">Archives</button>
-        <button id="storyModeButton" class="menu-button story-button" onclick="openStoryMode()">Story Mode</button>
+        <button class="menu-button" onclick="openArchives()">Archives</button>
+        <button class="menu-button play-button" onclick="startGame()">PLAY</button>
+        <button id="storyModeButton" class="menu-button story-button" onclick="openStoryMode()">STORY</button>
     </div>  
 
     <!-- Play Section -->
@@ -82,12 +82,13 @@
         
         <!-- Gacha Animation Container -->
         <div class="gacha-animation-container">
-            <!-- Gacha Ball -->
-            <div class="gacha-ball" id="gachaBall"></div>
-            <button id="gacha-Button" onclick="pullGacha()"></button>
+            <button class="gacha-button" onclick="pullGacha()">1-Summon</button>
+            <button class="gacha-button" onclick="pullGachaTen()">10-Summon</button>
         </div>
 
         
+        <!-- Gacha Ball -->
+        <div class="gacha-ball" id="gachaBall"></div>
     
         <!-- Result Display -->
         <div id="result" class="gacha-result"></div>

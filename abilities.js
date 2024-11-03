@@ -1,46 +1,42 @@
     // Define all abilities and their effects
     const abilityFunctions = {
-        "Feral Beast": function() {
-            applyHealthDebuff(20);
+        "Semblance of a Beast": function() {
+            decreaseBossHealthByPercentagePerm(20); //done
         },
         "Song of Longing": function() {
-            applyAttackBoost(1.3);
+            applyAttackBoost(1.2); //done
         },
-        "Avenger’s Strike": function() {
-            dealDamageToBoss(200);  // Adjust the damage amount as needed
+        "SwordThrust": function() {
+            dealDamageToBoss(200);  // Adjust the damage amount as needed (done)
         },
-        "Heart of a Father": function() {
-            applyAttackBoost(1.1);
+        "Handprint Momento": function() {
+            crystals_multiplulier(2);
         },
-        "Sky Refuge": function() {
-            pauseGameTimer(3000);
+        "Cumberstone": function() {
+            increaseDifficultyBy(3); //done
         },
-        "Moment of Epiphany": function() {
-            displayBossHealth();
+        "Gentle Black Roots": function() {
+            //displayBossHealth();
+            restoreAbilities(); //done
         },
         "Meno Paradox": function() {
-            crystalsCount += 1;
+            crystalsCount += 5; //done
             addXP(-10);
         },
         "Butterfly Dream": function() {
-            applyHealthDebuff(50); 
+            //applyHealthDebuff(50); 
+            pauseGameTimer(3000);
         },
-        "Mischief Maker": function() {
-            increaseDifficultyBy(3);
-        },
-        "King's Command": function() {
-            restoreAbilities();
-            increaseDifficultyBy(1);
-        },
-        "Queen's Grace": function() {
-            restoreAbilities();
-            crystalsCount += 8;
+        "Committ'st Knaveries": function() {
+            applyHealthDebuff(50); //done
         },
         "Socratic Reponse": function() { 
-            increaseTime(10);
+            increaseTime(15); //done
             addXP(30);
         }
     };
+
+
 
 
 
@@ -68,6 +64,11 @@ function useCharacterAbility(character) {
     }
 }
 
+//Rahamat ability
+let sacrifice = 1;
+function crystals_multiplulier(num) {
+    sacrifice = num;
+}
 
 
 
@@ -96,7 +97,7 @@ function restoreAbilities() {
 }
 
 
-// Variable to track remaining difficulty levels for Mischief Maker effect
+// Variable to track remaining difficulty levels for Robin ===================================================================
 let debuffRemainingDifficulties = 0;
 
 // Function to apply Mischief Maker effect
@@ -117,8 +118,25 @@ function decreaseBossHealthByPercentage(percentage) {
     console.log(`Boss health decreased by ${percentage}%: ${healthDecrease} points.`);
     updateBossHealthBar();  // Update the UI to reflect the health change
 }
+//===========================================================================================================================
 
+// Track if the health debuff has already been applied
+let healthDebuffAppliedPerm = false;
 
+// Function to apply a permanent health debuff
+function decreaseBossHealthByPercentagePerm(percentage) {
+    healthDebuffAppliedPerm = true;
+    const healthDecrease = boss.currentHealth * (percentage / 100);
+    boss.currentHealth -= healthDecrease;  // Deduct the percentage from the current health
+    console.log(`Boss health decreased by ${percentage}%: ${healthDecrease} points.`);
+    updateBossHealthBar();  // Update the UI to reflect the health change
+}
+
+function resetHealthDebuff() {
+    healthDebuffAppliedPerm = false;
+}
+
+//Maheen ability
 function increaseDifficultyBy(levels) {
     difficulty += levels;  // Increase the difficulty by the specified number
     console.log(`Difficulty increased by ${levels}. New difficulty level: ${difficulty}`);

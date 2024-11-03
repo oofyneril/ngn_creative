@@ -1,31 +1,34 @@
 {
   "characters": [
     {
-      "name": "Kabuliwallah",
+      "name": "Rahamat",
       "rarity": "Common",
-      "ability": "Heart of a Father",
-      "abilityDescription": "Heals teammates or boosts defense when a child character is present.",
-      "description": "A traveling merchant from Afghanistan who forms a bond with a young girl in Calcutta.",
+      "ability": "Handprint Momento",
+      "abilityDescription": "Doubles the number of crystals gain at the end of the game",
+      "description": "Rahamat, the Kabuliwallah, is an Afghan peddler working in India to support his family back home. His bond with Mini, a young Indian girl who reminds him of his daughter, underscores the sacrifices and emotional connections of immigrants separated from loved ones.",
+      "origin": "Kabuliwallah by Rabindranath Tagore",
       "image": "images/kabuliwallah_card.png",
       "char": "images/kabuliwallah.png",
-      "icon": "images/heart_of_father.png"
+      "icon": "images/handprint_momento.png"
     },
     {
       "name": "Maheen Banou",
       "rarity": "Common",
-      "ability": "Sky Refuge",
-      "abilityDescription": "Creates a shield around the player’s team, reducing damage and doubling books for a short time.",
-      "description": "A woman seeking a place of safety and peace, imagining a mansion in the sky as a refuge.",
+      "ability": "Cumbersome",
+      "abilityDescription": "Spends 10 XP points and gain 5 crystals",
+      "description": "An elder facing constant displacement, Maheen Banou yearns for peace and stability. Her story explores the universal desire for security in life’s later stages, reflecting the resilience and wisdom she’s gathered over the years as she navigates these challenges.",
+      "origin": "A Mansion in the Sky by Goli Taraghi",
       "image": "images/maheen_card.png",
       "char": "images/maheen.png",
-      "icon": "images/sky_refuge.png"
+      "icon": "images/cumbersome.png"
     },
     {
       "name": "Ana",
       "rarity": "Common",
-      "ability": "Moment of Epiphany",
-      "abilityDescription": "After a revolutionary experience, she has widen her view, enabling players to see the boss's remaining health..",
-      "description": "A housewife transformed by a single, unexpected moment of emotional revelation.",
+      "ability": "Gentle Black Roots",
+      "abilityDescription": "Reactivates all character's abilities",
+      "description": "A housewife, Ana, represents the universal experience of adulthood’s challenges and self-discoveries. She is a character defined by her moments of personal reflection and growth, showing wisdom gained through a journey of introspection, often arriving at life-changing realizations",
+      "origin": "Love by Clarice Lispector",
       "image": "images/ana_card.png",
       "char": "images/ana.png",
       "icon": "images/moment_of_e.png"
@@ -34,8 +37,9 @@
       "name": "Meno",
       "rarity": "Common",
       "ability": "Meno Paradox",
-      "abilityDescription": "Engages enemies in philosophical debates, briefly stunning them and increasing books earned.",
-      "description": "A character from Plato's dialogues, whose in search of the nature of virtue.",
+      "abilityDescription": "He constant assumptions consumes the player’s XP then gives the player 5 crystals in return",
+      "description": "A young Greek student from Plato’s Meno, Meno grapples with the elusive concept of virtue, often stumbling into contradictions. His frustration with philosophical inquiry, disrupts his curiosity and openness to learning",
+      "origin": "Meno by Plato",
       "image": "images/meno_card.png",
       "char": "images/meno.png",
       "icon": "images/meno_paradox.png"
@@ -43,9 +47,10 @@
     {
       "name": "Bisclavret",
       "rarity": "Rare",
-      "ability": "Feral Beast",
-      "abilityDescription": "In his beastly form, he strikes fear, lowering enemy's health by 20%.",
-      "description": "A noble knight cursed to transform into a wolf. As Bisclavret, he retains his human honor and loyalty, which ultimately helps him regain his human form.",
+      "ability": "Semblance of a Beast",
+      "abilityDescription": "In his beastly form, he strikes fear, lowering enemy's health by 20% permenently",
+      "description": "The knight Bisclavret is cursed to live as a werewolf, leading a life torn between his human and beastly forms. Highlighting themes of loyalty and betrayal, as he strives to maintain his honor despite the isolation and secrecy that come with his curse.",
+      "origin": "Bisclavret by Marie de France",
       "image": "images/bisclavret_card.png",
       "char": "images/bisclavret.png",
       "icon": "images/feral_beast.png"
@@ -54,8 +59,9 @@
       "name": "Lady of Laüstic",
       "rarity": "Rare",
       "ability": "Song of Longing",
-      "abilityDescription": "Summons a nightingale to reveal weaknesses, enable players to see the boss's remaining health.",
-      "description": "A woman trapped in a loveless marriage who communicates with her lover via the nightingale’s song. The bird becomes a symbol of their love.",
+      "abilityDescription": "Increases allies base damage by 20%",
+      "description": "A noblewoman trapped in an unfulfilled marriage, the Lady of Laüstic finds solace in her secret love, represented by a nightingale. She uses the nightingale’s song to connect with her lover, symbolizing her unspoken desires and the tragedy of unfulfilled love.",
+      "origin": "Laüstic by Marie de France",
       "image": "images/laustic_card.png",
       "char": "images/laustic.png",
       "icon": "images/song_of_longing.png"
@@ -63,9 +69,10 @@
     {
       "name": "Yonec",
       "rarity": "Rare",
-      "ability": "Avenger’s Strike",
-      "abilityDescription": "Deals extra damage to enemies that have harmed the player, increasing book collection.",
-      "description": "The son of a noblewoman and a mystical knight. He avenges his parents' tragic love by slaying the cruel lord.",
+      "ability": "SwordThrust",
+      "abilityDescription": "Deals a massive amount of damage to a single enemy (200 Damage)",
+      "description": "Yonec, the son of a mystical knight and a noblewoman, grows up destined to avenge his parents. He eventually kills the oppressive lord responsible for his parents’ suffering, fulfilling the legacy of his father, a knight who could transform into a hawk.",
+      "origin": "Yonec by Marie de France",
       "image": "images/yonec_card.png",
       "char": "images/yonec.png",
       "icon": "images/avenger_strike.png"
@@ -75,47 +82,30 @@
       "rarity": "Super-Rare",
       "ability": "Butterfly Dream",
       "abilityDescription": "Phases through enemies or avoids damage, allowing the player to collect extra books.",
-      "description": "A philosopher who embraces the flow of life and the illusory nature of reality.",
+      "description": "The philosopher Zhuang Zhou is famed for his allegory of the butterfly dream, where he questions if he is a man dreaming of a butterfly or a butterfly dreaming of a man. Reflecting deep philosophical themes of illusion, reality, and identity, exploring the fluid nature of existence and perception.",
+      "origin": "Zhuangzi",
       "image": "images/zhuangzhou_card.png",
       "char": "images/zhuangzhou.png",
       "icon": "images/butterfly_dream.png"
     },
     {
-      "name": "Puck",
+      "name": "Robin",
       "rarity": "Super-Rare",
-      "ability": "Mischief Maker",
-      "abilityDescription": "Casts random status effects on enemies (confusion, charm, sleep), doubling books gained after an effect is applied.",
-      "description": "The mischievous fairy who serves Oberon and causes chaos with the love potion.",
+      "ability": "Committ'st Knaveries",
+      "abilityDescription": "Transforms enemies into an “Ass” which in turn lowers their maximum health points and total defence.",
+      "description": "Robin Goodfellow, is a mischievous fairy who serves Oberon, the fairy king. Known for his chaotic tricks, the unpredictable side of the fairy world, often leading to unintended consequences in the human realm.",
+      "origin": "A Midsummer Night’s Dream by William Shakespeare",
       "image": "images/puck_card.png",
       "char": "images/puck.png",
       "icon": "images/mischief_maker.png"
     },
     {
-      "name": "Oberon",
-      "rarity": "Ultra-Rare",
-      "ability": "King's Command",
-      "abilityDescription": "Commands enemies, causing confusion and enhancing allies' strength, doubling XP.",
-      "description": "The powerful and mystical king of the fairies, known for his manipulation and jealousy.",
-      "image": "images/oberon_card.png",
-      "char": "images/oberon.png",
-      "icon": "images/king_command.png"
-    },
-    {
-      "name": "Titania",
-      "rarity": "Ultra-Rare",
-      "ability": "Queen's Grace",
-      "abilityDescription": "Heals allies with her magical touch, boosting their strength and XP gain.",
-      "description": "The enchanting queen of the fairies, full of grace and kindness.",
-      "image": "images/titania_card.png",
-      "char": "images/titania.png",
-      "icon": "images/queen_grace.png"
-    },
-    {
       "name": "Socrates",
       "rarity": "Ultra-Rare",
       "ability": "Socratic Response",
-      "abilityDescription": "Confuses enemies with philosophical replies, reducing their confidence and wasting time.",
-      "description": "The renowned philosopher who guides others to the answer using 'socratic' questions.",
+      "abilityDescription": "Confuses enemies which stalls the battle, increasing the amount of time given and giving the player extra XP .",
+      "description": "The Greek philosopher Socrates is renowned for his method of inquiry, where he challenges others to think critically by asking probing questions. His dialogues are rooted in the pursuit of wisdom, encouraging others to question their beliefs, and he remains an influential figure in philosophy.",
+      "origin": "Meno by Plato",
       "image": "images/socrates_card.png",
       "char": "images/socrates.png",
       "icon": "images/socratic_response.png"

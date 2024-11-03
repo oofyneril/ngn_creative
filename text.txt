@@ -534,3 +534,70 @@ Bisclavret:
 Titania:
 (Softly, but firm)
 “Stay as long as you like, child. There is much you can learn here. But be wary of those who wish to twist dreams into chains.
+
+
+<p style="font-size: 22px; margin-bottom: 0;"><strong>Description:</strong></p>
+
+
+    {
+      "name": "Titania",
+      "rarity": "Ultra-Rare",
+      "ability": "Queen's Grace",
+      "abilityDescription": "Heals allies with her magical touch, boosting their strength and XP gain.",
+      "description": "The enchanting queen of the fairies, full of grace and kindness.",
+      "image": "images/titania_card.png",
+      "char": "images/titania.png",
+      "icon": "images/queen_grace.png"
+    },
+    {
+      "name": "Oberon",
+      "rarity": "Ultra-Rare",
+      "ability": "King's Command",
+      "abilityDescription": "Commands enemies, causing confusion and enhancing allies' strength, doubling XP.",
+      "description": "The powerful and mystical king of the fairies, known for his manipulation and jealousy.",
+      "image": "images/oberon_card.png",
+      "char": "images/oberon.png",
+      "icon": "images/king_command.png"
+    },
+
+
+
+
+
+
+
+
+    // Function to pull a character from the gacha
+function pullGacha() {
+    const crystalsCost = 5;
+    if (crystalsCount >= crystalsCost) {
+        crystalsCount -= crystalsCost;
+        updatecrystalsDisplay();
+
+        clickSound.play();
+        summonSound.play();
+        // Simulate the gacha process (e.g., after 3 seconds reveal the character)
+        setTimeout(() => {
+            // Stop the animation after 3 seconds
+            gachaBall.classList.add('spin', 'glow');
+
+            const character = getRandomCharacter();
+            const resultDiv = document.getElementById('result');
+
+            // Add an outer glow around the character container for dramatic reveal
+            resultDiv.innerHTML = `
+                <div style="display: flex; justify-content: center; align-items: center; animation: fadeIn 1.5s ease;">
+                    <img src="${character.image}" alt="${character.name}" style="width:300px; animation: bounceIn 1s ease;">
+                </div>
+            `;
+
+            addItemToInventory(character);
+            updateInventoryDisplay();
+
+        }, 1000); // Wait for 3 seconds before showing the result (gacha spin time)
+    } else {
+        alert("You need at least 5 crystals to pull a character!");
+    }
+    // Start spinning the gacha ball and add the glow effect
+    gachaBall.classList.remove('spin', 'glow');
+}

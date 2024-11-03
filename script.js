@@ -1,7 +1,7 @@
 let characters = [];
 let inventory = {};
 let activeCharacters = [];
-let crystalsCount = 100;
+let crystalsCount = 1000;
 let xp = 0;
 let maxXP = 10000;
 let boss = {
@@ -83,7 +83,7 @@ function startGame() {
     boss.maxHealth = 200;  // Reset boss health to initial value
     boss.currentHealth = boss.maxHealth;  // Make sure current health is reset too
     resetFight();
-    resetGame()
+    resetGame();
     // Update the boss health bar when re-entering
     updateBossHealthBar();
 }
@@ -127,11 +127,12 @@ function gameOver() {
     gameOverMessage.id = 'gameOverMessage';
 
     // Award 8 crystals points for each boss kill
-    crystalsCount += (7*(difficulty-1));
+    crystalsCount += (7*(difficulty-1)*sacrifice);
     document.getElementById('crystalsCounter').innerText = crystalsCount;  // Update crystals counter at the top left
 
     let currentLevel = difficulty; // Assuming 'difficulty' is your current level
     saveLevel(currentLevel);
+
     
 
     // Style the game over message with the CSS you mentioned
@@ -143,6 +144,9 @@ function gameOver() {
         <button class="replay-button" onclick="returnToMenu()">Return to Main Menu</button>
     `;
     
+    // Disable actions like attack if necessary
+    document.getElementById('basicAttackButton').disabled = true;
+    
 
     // Append the message to the body
     document.body.appendChild(gameOverMessage);
@@ -150,8 +154,7 @@ function gameOver() {
     // Stop the timer
     clearInterval(timerInterval);
 
-    // Disable actions like attack if necessary
-    document.getElementById('attackButton').disabled = true;
+    
 }
 
 // Function to start the boss fight
@@ -239,7 +242,7 @@ function triggerAbility(characterName) {
 // Function to handle boss defeat
 function bossDefeated() {
     document.getElementById('bossStatus').innerText = "Boss Defeated!";
-    // document.getElementById('attackButton').disabled = true;
+    // document.getElementById('basicAttackButton').disabled = true;
 
     addXP(5);  // Award 5 XP per boss kill
 
@@ -247,11 +250,16 @@ function bossDefeated() {
     boss.maxHealth = Math.floor(boss.maxHealth * 1.06);  // Add 6% to boss max health
     difficulty++;  // Increase difficulty level
 
+    //Check if Perm debuff is active
+    if (healthDebuffAppliedPerm == true) {
+        decreaseBossHealthByPercentagePerm(percentage);
+    }
+
     // Check if Mischief Maker effect is active
     if (debuffRemainingDifficulties > 0) {
         debuffRemainingDifficulties--;  // Decrease the number of difficulties remaining
         if (debuffRemainingDifficulties > 0) {
-            decreaseBossHealthByPercentage(20);  // Apply the 20% health decrease for this level
+            decreaseBossHealthByPercentage(percen);  // Apply the 20% health decrease for this level
         } else {
             console.log('Mischief Maker effect has ended.');
         }
@@ -264,7 +272,7 @@ function bossDefeated() {
 
 // Function to reset the fight
 function resetFight() {
-    // document.getElementById('attackButton').disabled = false;
+    // document.getElementById('basicAttackButton').disabled = false;
     boss.currentHealth = boss.maxHealth;
     updateBossHealthBar();
     document.getElementById('bossStatus').innerText = "";
@@ -279,7 +287,7 @@ function resetGame() {
         document.body.removeChild(gameOverMessage);  // Remove the message from the DOM
     }
 
-    // document.getElementById('attackButton').disabled = false;
+    // document.getElementById('basicAttackButton').disabled = false;
     boss.currentHealth = boss.maxHealth;
     difficulty = 1;
     
@@ -288,11 +296,13 @@ function resetGame() {
     document.getElementById('timer').innerText = timeLeft;
     startTimer();
 
+    resetHealthDebuff();
+    crystals_multiplulier(1);
     updateBossHealthBar();
     updateDifficultyDisplay();
     enableAllAbilityButtons();
     updateBossHealthDisplay();
-    document.getElementById('attackButton').disabled = false;  // Re-enable the attack button
+    document.getElementById('basicAttackButton').disabled = false;  // Re-enable the attack button
     abilityButtons.classList.remove('disabled'); // Add the CSS class to change color to red
     document.getElementById('bossStatus').innerText = "";
 }
@@ -393,7 +403,7 @@ function pullGacha() {
             // Add an outer glow around the character container for dramatic reveal
             resultDiv.innerHTML = `
                 <div style="display: flex; justify-content: center; align-items: center; animation: fadeIn 1.5s ease;">
-                    <img src="${character.image}" alt="${character.name}" style="width:300px; animation: bounceIn 1s ease;">
+                    <img src="${character.image}" alt="${character.name}" style="width:300px; animation: bounceIn 1s ease; z-index: 2;">
                 </div>
             `;
 
@@ -407,6 +417,71 @@ function pullGacha() {
     // Start spinning the gacha ball and add the glow effect
     gachaBall.classList.remove('spin', 'glow');
 }
+
+// 10-Summon
+function pullGachaTen() {
+    const crystalsCost = 50; // Cost for 10 pulls
+    if (crystalsCount >= crystalsCost) {
+        crystalsCount -= crystalsCost;
+        updatecrystalsDisplay();
+
+        clickSound.play();
+        summonSound.play();
+
+        
+
+        // Array to store the pulled characters
+        const pulledCharacters = [];
+
+        // Simulate the gacha process (e.g., after 1 second reveal the characters)
+        setTimeout(() => {
+            // Start spinning the gacha ball and add the glow effect
+            gachaBall.classList.add('spin', 'glow');
+
+            for (let i = 0; i < 10; i++) {
+                const character = getRandomCharacter();
+                pulledCharacters.push(character); // Add character to pulled list
+                addItemToInventory(character); // Add character to inventory
+            }
+
+            updateInventoryDisplay();
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            // Create a container for grid layout of the pulled characters
+            const characterGrid = document.createElement('div');
+            characterGrid.style.display = 'grid';
+            characterGrid.style.gridTemplateColumns = 'repeat(5, 1fr)'; // 5 columns layout
+            characterGrid.style.gap = '10px'; // Space between images
+            characterGrid.style.justifyContent = 'center';
+            characterGrid.style.alignItems = 'center';
+            characterGrid.style.animation = 'fadeIn 1.5s ease';
+
+            // Display each character in the pulledCharacters array
+            pulledCharacters.forEach(character => {
+                const characterDiv = document.createElement('div');
+                characterDiv.style.display = 'flex';
+                characterDiv.style.justifyContent = 'center';
+                characterDiv.style.alignItems = 'center';
+                
+                characterDiv.innerHTML = `
+                    <img src="${character.image}" alt="${character.name}" style="width:150px; height:auto; animation: bounceIn 1s ease; z-index: 2;">
+                `;
+                
+                characterGrid.appendChild(characterDiv);
+            });
+
+            resultDiv.appendChild(characterGrid);
+
+        }, 1000); // Wait for 1 second before showing the result (gacha spin time)
+    } else {
+        alert("You need at least 50 crystals for a 10-pull!");
+    }
+    // Start spinning the gacha ball and add the glow effect
+    gachaBall.classList.remove('spin', 'glow');
+}
+
 
 // Function to get the color based on the character rarity
 function getRarityColor(rarity) {
@@ -554,13 +629,14 @@ function showCharacterDetails(characterName) {
             <div class="character-details-container">
                 <!-- Left section for image and description -->
                 <div class="character-left-section">
-                    <img src="${character.char}" alt="${character.name}" style="width:350px; height:100%;">
+                    <img src="${character.char}" alt="${character.name}" style="width:350px; height:90%; margin: 20px; left: 100px;">
                 </div>
 
-                <!-- Right section for ability -->
-                <div class="character-right-section">
+                <!-- Middle section for ability -->
+                <div class="character-middle-section">
+
                     <h2 style="
-                    font-size: 28px; 
+                    font-size: 35px; 
                     font-weight: bold;
                     right: 600px; 
                     margin-bottom: 10px;">
@@ -568,12 +644,21 @@ function showCharacterDetails(characterName) {
                     </h2>
 
                     <!-- Ability Section -->
-                    <p><strong>Ability:</strong> ${character.ability}</p>
+                    <p style="font-size: 20px;"><strong>${character.ability}</strong></p>
                     <img src="${character.icon}" alt="${character.name}" style="width:100px; height: 100px;">
-                    <p><strong>${character.abilityDescription}</strong></p>
+                    <p>${character.abilityDescription}</p>
+
+                </div>
+
+                <!-- Right section for description -->
+                <div class="character-right-section">
 
                     <!-- Description Section -->
-                    <p style="font-size: 16px; margin-bottom: 0;"><strong>Description:</strong> ${character.description}</p>
+                    <p style="font-size: 20px; margin-bottom: 0;">${character.description}</p>
+
+                    <!-- Description Section -->
+                    <p style="font-size: 20px; margin-bottom: 0;"><strong>Inspired from: ${character.origin}</strong></p>
+
                 </div>
             </div>
         `;
@@ -741,6 +826,7 @@ function loadAchievements() {
 }
 
 function resetAchievements() {
+    clickSound.play();
     localStorage.removeItem('achievements'); // Remove the achievements key from local storage
     openAchievements();
 }
@@ -749,11 +835,13 @@ function resetAchievements() {
 // Function to open the achievements modal
 function openAchievements() {
     loadAchievements();
+    clickSound.play();
     document.getElementById('achievementsModal').style.display = 'block';
 }
 
 // Function to close the achievements modal
 function closeAchievements() {
+    clickSound.play();
     document.getElementById('achievementsModal').style.display = 'none';
 }
 
