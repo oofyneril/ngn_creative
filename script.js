@@ -412,7 +412,7 @@ function pullGacha() {
 
         }, 1000); // Wait for 3 seconds before showing the result (gacha spin time)
     } else {
-        alert("You need at least 5 crystals to pull a character!");
+        alert("You need at least 5 Virtues to pull a character!");
     }
     // Start spinning the gacha ball and add the glow effect
     gachaBall.classList.remove('spin', 'glow');
@@ -476,7 +476,7 @@ function pullGachaTen() {
 
         }, 1000); // Wait for 1 second before showing the result (gacha spin time)
     } else {
-        alert("You need at least 50 crystals for a 10-pull!");
+        alert("You need at least 50 Virtues for a 10-pull!");
     }
     // Start spinning the gacha ball and add the glow effect
     gachaBall.classList.remove('spin', 'glow');
